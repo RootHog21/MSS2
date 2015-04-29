@@ -20,6 +20,18 @@
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" >
         </activity>
+        <activity
+            android:name=".CreateScheduleActivity"
+            android:label="@string/title_activity_create_schedule" >
+        </activity>
+        <activity
+            android:name=".SecurityActivity"
+            android:label="@string/title_activity_security" >
+        </activity>
+        <activity
+            android:name=".ViewScheduleActivity"
+            android:label="@string/title_activity_view_schedule" >
+        </activity>
     </application>
 
 </manifest>
