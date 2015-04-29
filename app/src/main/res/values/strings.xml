@@ -1,6 +1,9 @@
 <resources>
-    <string name="app_name">MSS</string>
-
-    <string name="hello_world">Hello world!</string>
+    <string name="app_name">Maverick_s_s</string>
     <string name="action_settings">Settings</string>
+    <string name="logo_description">utaLogo</string>
+    <string name="project_name_text">MAV SCHEDULING SERVICE</string>
+    <string name="username_text">Username</string>
+    <string name="password_text">Password</string>
+    <string name="login_button_text">LOGIN</string>
 </resources>
