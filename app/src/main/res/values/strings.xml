@@ -6,4 +6,9 @@
     <string name="username_text">Username</string>
     <string name="password_text">Password</string>
     <string name="login_button_text">LOGIN</string>
+    <string name="title_activity_create_schedule">CreateScheduleActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_security">SecurityActivity</string>
+    <string name="title_activity_view_schedule">ViewScheduleActivity</string>
 </resources>
