@@ -11,4 +11,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_security">SecurityActivity</string>
     <string name="title_activity_view_schedule">ViewScheduleActivity</string>
+    <string name="title_activity_login">LogIn</string>
+
 </resources>
