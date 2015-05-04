@@ -28,8 +28,15 @@ public class LoginActivity extends ActionBarActivity {
     //called when user clicks Login button
     public void login(View view){
         Intent loginIntent = new Intent(this, MainActivity.class);
-        startActivity(loginIntent);
-        //currently always logs in regardless of information.
+        EditText username = (EditText) findViewById(R.id.usernameText);
+        String name = username.getText().toString();
+        EditText password = (EditText) findViewById(R.id.usernameText);
+        String pass = password.getText().toString();
+        if(name.compareTo("admin") == 0) {
+            if(pass.compareTo("admin") == 0){
+                startActivity(loginIntent);
+            }
+        }
     }
 
     @Override
