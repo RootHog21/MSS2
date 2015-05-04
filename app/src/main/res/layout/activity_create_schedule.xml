@@ -23,6 +23,7 @@
         android:text="Remove Selected Class"
         android:id="@+id/removeClassButton"
         android:layout_marginTop="20dp"
+        android:onClick="removeClass"
         android:layout_below="@+id/addClassButton"
         android:layout_centerHorizontal="true" />
 
@@ -32,6 +33,7 @@
         android:text="Add Blocked Time"
         android:id="@+id/addBlockTimeButton"
         android:layout_marginTop="20dp"
+        android:onClick="blockTime"
         android:layout_below="@+id/removeClassButton"
         android:layout_centerHorizontal="true" />
 
@@ -52,7 +54,7 @@
         android:layout_height="wrap_content"
         android:text="Create"
         android:id="@+id/createButton"
-        android:onClick="createSchedule"
+        android:onClick="create"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 

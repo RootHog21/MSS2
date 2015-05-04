@@ -40,7 +40,7 @@ public class CreateScheduleActivity extends ActionBarActivity {
     }
 
     //called when user clicks Create
-    public void createSchedule(View view) {
+    public void create(View view) {
         //Don't forget to add ScheduleCreator call
         //Intent createIntent = new Intent(this, SelectSchedule.class);
         //startActivity(createIntent);
