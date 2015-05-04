@@ -1,9 +1,11 @@
 package omicron.mss;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class SecurityActivity extends ActionBarActivity {
@@ -20,6 +22,13 @@ public class SecurityActivity extends ActionBarActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_security, menu);
         return true;
+    }
+
+    //called when user clicks Submit
+    public void submit(View view) {
+        //temporary link, fix later
+        Intent submitIntent = new Intent(this, MainActivity.class);
+        startActivity(submitIntent);
     }
 
     @Override
