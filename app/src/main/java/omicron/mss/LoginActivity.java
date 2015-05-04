@@ -1,9 +1,12 @@
 package omicron.mss;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 
 
 public class LoginActivity extends ActionBarActivity {
@@ -20,6 +23,13 @@ public class LoginActivity extends ActionBarActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_login, menu);
         return true;
+    }
+
+    //called when user clicks Login button
+    public void login(View view){
+        Intent loginIntent = new Intent(this, MainActivity.class);
+        startActivity(loginIntent);
+        //currently always logs in regardless of information.
     }
 
     @Override

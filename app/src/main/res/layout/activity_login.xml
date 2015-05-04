@@ -68,6 +68,7 @@
         android:id="@+id/loginButton"
         android:layout_below="@+id/passwordText"
         android:layout_alignEnd="@+id/passwordText"
+        android:onClick="login"
         android:layout_marginTop="10dp"
         android:background="#F47F24"
         android:textColor="#FFFFFF" />
