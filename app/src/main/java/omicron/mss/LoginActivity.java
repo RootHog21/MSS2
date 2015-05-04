@@ -8,13 +8,22 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
+import com.parse.LogInCallback;
+import com.parse.Parse;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseUser;
+
 
 public class LoginActivity extends ActionBarActivity {
-
+    ParseObject parse;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        Parse.enableLocalDatastore(this);
+        Parse.initialize(this, "FHwTc8y140hzykJ9bRRf5rcQAx9fIWENsF5Og9Xh", "98T1AS8768nb2UAMiaaGL1SuecHaYooPZo4w8IH5");
+        parse = new ParseObject("ParseObj");
     }
 
 
@@ -26,17 +35,22 @@ public class LoginActivity extends ActionBarActivity {
     }
 
     //called when user clicks Login button
-    public void login(View view){
-        Intent loginIntent = new Intent(this, MainActivity.class);
+    public void login(View view) throws ParseException {
+        final Intent loginIntent = new Intent(this, MainActivity.class);
         EditText username = (EditText) findViewById(R.id.usernameText);
         String name = username.getText().toString();
-        EditText password = (EditText) findViewById(R.id.usernameText);
+        EditText password = (EditText) findViewById(R.id.passwordText);
         String pass = password.getText().toString();
-        if(name.compareTo("admin") == 0) {
-            if(pass.compareTo("admin") == 0){
-                startActivity(loginIntent);
+        ParseUser.logInInBackground(name, pass,new LogInCallback() {
+            public void done(ParseUser user, ParseException e) {
+                if (user != null) {
+                    startActivity(loginIntent);
+                } else {
+                    System.out.println("LoginError");
+                    // Signup failed. Look at the ParseException to see what happened.
+                }
             }
-        }
+        });
     }
 
     @Override
