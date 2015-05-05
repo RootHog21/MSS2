@@ -26,14 +26,12 @@ public class ViewScheduleActivity extends ActionBarActivity {
 
     //called when the user clicks Back
     public void gotoMain(View view) {
-        Intent mainIntent = new Intent(this, MainActivity.class);
-        startActivity(mainIntent);
+        finish();
     }
 
     public void deleteSchedule(View view) {
         //insert delete schedule algorithm
-        Intent mainIntent = new Intent(this, MainActivity.class);
-        startActivity(mainIntent);
+        finish();
     }
 
     @Override

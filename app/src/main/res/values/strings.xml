@@ -16,5 +16,7 @@
     <string name="title_activity_register_user">RegisterUserActivity</string>
     <string name="title_activity_add_blocked_time">AddBlockedTimeActivity</string>
     <string name="title_activity_add_class">AddClassActivity</string>
+    <string name="title_activity_edit_user">EditUserActivity</string>
+    <string name="title_activity_store_schedule">StoreScheduleActivity</string>
 
 </resources>

@@ -28,8 +28,7 @@ public class AddBlockedTimeActivity extends ActionBarActivity {
 
     //called when user clicks Back
     public void backToCreate(View view) {
-        Intent createIntent = new Intent(this, CreateScheduleActivity.class);
-        startActivity(createIntent);
+        finish();
     }
 
     //called when user clicks Done
@@ -46,8 +45,7 @@ public class AddBlockedTimeActivity extends ActionBarActivity {
         CheckBox saturday = (CheckBox) findViewById(R.id.saturday);
         //add status checking
         //add adding time algorithm
-        Intent createIntent = new Intent(this, CreateScheduleActivity.class);
-        startActivity(createIntent);
+        finish();
     }
 
     @Override

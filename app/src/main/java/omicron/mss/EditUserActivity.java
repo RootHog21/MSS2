@@ -8,31 +8,33 @@ import android.view.MenuItem;
 import android.view.View;
 
 
-public class AddClassActivity extends ActionBarActivity {
+public class EditUserActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_class);
+        setContentView(R.layout.activity_edit_user);
     }
 
-    //called when user clicks Back
-    public void backToCreate(View view) {
-        finish();
-    }
-
-    //called when user clicks Add Class
-    public void addClass(View view) {
-        //add add class algorithm
-        Intent createIntent = new Intent(this, CreateScheduleActivity.class);
-        startActivity(createIntent);
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_add_class, menu);
+        getMenuInflater().inflate(R.menu.menu_edit_user, menu);
         return true;
+    }
+
+    //called when user clicks Back
+    public void gotoMain(View view) {
+        finish();
+    }
+
+    public void changePassword(View view) {
+        //add change password algorithm
+    }
+
+    public void deleteAccount(View view) {
+        //add delete account algorithm
     }
 
     @Override

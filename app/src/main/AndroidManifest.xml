@@ -47,6 +47,14 @@
             android:name=".AddClassActivity"
             android:label="@string/title_activity_add_class" >
         </activity>
+        <activity
+            android:name=".EditUserActivity"
+            android:label="@string/title_activity_edit_user" >
+        </activity>
+        <activity
+            android:name=".StoreScheduleActivity"
+            android:label="@string/title_activity_store_schedule" >
+        </activity>
     </application>
 
 </manifest>

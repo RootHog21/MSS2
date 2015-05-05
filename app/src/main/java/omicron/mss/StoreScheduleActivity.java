@@ -8,31 +8,25 @@ import android.view.MenuItem;
 import android.view.View;
 
 
-public class AddClassActivity extends ActionBarActivity {
+public class StoreScheduleActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_class);
+        setContentView(R.layout.activity_store_schedule);
     }
 
-    //called when user clicks Back
-    public void backToCreate(View view) {
-        finish();
-    }
-
-    //called when user clicks Add Class
-    public void addClass(View view) {
-        //add add class algorithm
-        Intent createIntent = new Intent(this, CreateScheduleActivity.class);
-        startActivity(createIntent);
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_add_class, menu);
+        getMenuInflater().inflate(R.menu.menu_store_schedule, menu);
         return true;
+    }
+
+    public void saveSchedule(View view) {
+        //add save schedule algorithm
+        finish();
     }
 
     @Override
