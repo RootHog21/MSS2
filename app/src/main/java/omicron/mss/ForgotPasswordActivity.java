@@ -6,25 +6,36 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-
-import com.parse.Parse;
-import com.parse.ParseObject;
+import android.widget.EditText;
 
 
-public class MainActivity extends ActionBarActivity {
+public class ForgotPasswordActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_activity);
+        setContentView(R.layout.activity_forgot_password);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_forgot_password, menu);
         return true;
+    }
+
+    //called when user clicks Get Password
+    public void getPassword(View view) {
+        EditText username = (EditText) findViewById(R.id.passwordRetrieval);
+        String name = username.getText().toString();
+        //pop up password somehow
+    }
+
+    //called when the user clicks Back
+    public void gotoMain(View view) {
+        Intent mainIntent = new Intent(this, MainActivity.class);
+        startActivity(mainIntent);
     }
 
     @Override
@@ -40,23 +51,5 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    //called when user clicks Create Schedule
-    public void createSchedule(View view) {
-        Intent createIntent = new Intent(this, CreateScheduleActivity.class);
-        startActivity(createIntent);
-    }
-
-    //called when user clicks View Schedule
-    public void viewSchedule(View view) {
-        Intent viewIntent = new Intent(this, ViewScheduleActivity.class);
-        startActivity(viewIntent);
-    }
-
-    //called when user clicks Edit User
-    public void editUser(View view) {
-        //Intent editIntent = new Intent(this, EditUserActivity.class);
-        //startActivity(editIntent);
     }
 }

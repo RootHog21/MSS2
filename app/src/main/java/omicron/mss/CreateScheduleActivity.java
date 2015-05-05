@@ -1,9 +1,11 @@
 package omicron.mss;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class CreateScheduleActivity extends ActionBarActivity {
@@ -35,5 +37,30 @@ public class CreateScheduleActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    //called when user clicks Create
+    public void create(View view) {
+        //Don't forget to add ScheduleCreator call
+        //Intent createIntent = new Intent(this, SelectSchedule.class);
+        //startActivity(createIntent);
+    }
+
+    //called when user clicks Add Class
+    public void addClass(View view) {
+        //Intent addIntent = new Intent(this, AddClass.class);
+        //startActivity(addIntent);
+    }
+
+    //called when user clicks Remove Selected Class
+    public void removeClass(View view) {
+        //Don't forget to add RemoveClass algorithm
+        //no intent needed
+    }
+
+    //called when user clicks Add Blocked Time
+    public void blockTime(View view) {
+        //Intent blockIntent = new Intent(this, BlockTime.class);
+        //somehow branch to block time
     }
 }
