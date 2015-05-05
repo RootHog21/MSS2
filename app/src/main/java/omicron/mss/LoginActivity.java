@@ -41,7 +41,7 @@ public class LoginActivity extends ActionBarActivity {
         String name = username.getText().toString();
         EditText password = (EditText) findViewById(R.id.passwordText);
         String pass = password.getText().toString();
-        ParseUser.logInInBackground(name, pass,new LogInCallback() {
+        ParseUser.logInInBackground(name, pass, new LogInCallback() {
             public void done(ParseUser user, ParseException e) {
                 if (user != null) {
                     startActivity(loginIntent);
@@ -66,5 +66,15 @@ public class LoginActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    //called when user clicks Need to register
+    public void gotoRegister(View view) {
+        Intent registerIntent = new Intent(this, RegisterUserActivity.class);
+        startActivity(registerIntent);
+    }
+    //called when user clicks Need to register
+    public void gotoForget(View view) {
+        Intent ForgetIntent = new Intent(this, ForgotPasswordActivity.class);
+        startActivity(ForgetIntent);
     }
 }
