@@ -1,9 +1,14 @@
 package omicron.mss;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+
+import com.parse.Parse;
+import com.parse.ParseObject;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -11,7 +16,7 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.main_activity);
     }
 
 
@@ -35,5 +40,23 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    //called when user clicks Create Schedule
+    public void createSchedule(View view) {
+        Intent createIntent = new Intent(this, CreateScheduleActivity.class);
+        startActivity(createIntent);
+    }
+
+    //called when user clicks View Schedule
+    public void viewSchedule(View view) {
+        Intent viewIntent = new Intent(this, ViewScheduleActivity.class);
+        startActivity(viewIntent);
+    }
+
+    //called when user clicks Edit User
+    public void editUser(View view) {
+        //Intent editIntent = new Intent(this, EditUserActivity.class);
+        //startActivity(editIntent);
     }
 }

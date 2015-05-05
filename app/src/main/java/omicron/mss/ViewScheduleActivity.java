@@ -1,9 +1,11 @@
 package omicron.mss;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class ViewScheduleActivity extends ActionBarActivity {
@@ -20,6 +22,18 @@ public class ViewScheduleActivity extends ActionBarActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_view_schedule, menu);
         return true;
+    }
+
+    //called when the user clicks Back
+    public void gotoMain(View view) {
+        Intent mainIntent = new Intent(this, MainActivity.class);
+        startActivity(mainIntent);
+    }
+
+    public void deleteSchedule(View view) {
+        //insert delete schedule algorithm
+        Intent mainIntent = new Intent(this, MainActivity.class);
+        startActivity(mainIntent);
     }
 
     @Override
