@@ -8,30 +8,33 @@ import android.view.MenuItem;
 import android.view.View;
 
 
-public class ViewScheduleActivity extends ActionBarActivity {
+public class EditUserActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_schedule);
+        setContentView(R.layout.activity_edit_user);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_view_schedule, menu);
+        getMenuInflater().inflate(R.menu.menu_edit_user, menu);
         return true;
     }
 
-    //called when the user clicks Back
+    //called when user clicks Back
     public void gotoMain(View view) {
         finish();
     }
 
-    public void deleteSchedule(View view) {
-        //insert delete schedule algorithm
-        finish();
+    public void changePassword(View view) {
+        //add change password algorithm
+    }
+
+    public void deleteAccount(View view) {
+        //add delete account algorithm
     }
 
     @Override
