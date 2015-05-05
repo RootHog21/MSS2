@@ -12,5 +12,7 @@
     <string name="title_activity_security">SecurityActivity</string>
     <string name="title_activity_view_schedule">ViewScheduleActivity</string>
     <string name="title_activity_login">LogIn</string>
+    <string name="title_activity_forgot_password">ForgotPasswordActivity</string>
+    <string name="title_activity_register_user">RegisterUserActivity</string>
 
 </resources>

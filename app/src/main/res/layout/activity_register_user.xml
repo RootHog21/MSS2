@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Register"
-        android:id="@+id/button"
+        android:id="@+id/registerButton"
         android:background="#F47F24"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
@@ -52,7 +52,7 @@
         android:hint="Confirm Password"
         android:textColorHint="#F47F24"
         android:background="@drawable/text_box"
-        android:layout_above="@+id/button"
+        android:layout_above="@+id/registerButton"
         android:layout_alignLeft="@+id/editText4"
         android:layout_alignStart="@+id/editText4"
         android:layout_marginBottom="54dp" />
