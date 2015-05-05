@@ -6,79 +6,87 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:id="@+id/">
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Monday"
-            android:id="@+id/checkBox"
-            android:layout_marginTop="46dp"
+            android:id="@+id/monday"
+            android:layout_marginTop="47dp"
+            android:textSize="17sp"
+            android:clickable="true"
             android:layout_below="@+id/textView3"
-            android:layout_alignLeft="@+id/textView3"
-            android:layout_alignStart="@+id/textView3"
-            android:textSize="17sp" />
+            android:layout_alignLeft="@+id/editText"
+            android:layout_alignStart="@+id/editText" />
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tuesday"
-            android:id="@+id/checkBox2"
+            android:id="@+id/tuesday"
             android:checked="false"
             android:textSize="17sp"
-            android:layout_alignTop="@+id/checkBox"
-            android:layout_toRightOf="@+id/checkBox3"
-            android:layout_toEndOf="@+id/checkBox3" />
+            android:clickable="true"
+            android:layout_above="@+id/thursday"
+            android:layout_alignRight="@+id/editText"
+            android:layout_alignEnd="@+id/editText" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Add Block Time"
+            android:text="Add Blocked Time"
+            android:editable="false"
             android:id="@+id/textView3"
+            android:textSize="32sp"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:textSize="32sp" />
+            android:layout_centerHorizontal="true" />
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Wednesday"
-            android:id="@+id/checkBox3"
+            android:id="@+id/wednesday"
             android:checked="false"
-            android:layout_below="@+id/checkBox"
-            android:layout_alignLeft="@+id/checkBox"
-            android:layout_alignStart="@+id/checkBox"
+            android:clickable="true"
+            android:layout_below="@+id/monday"
+            android:layout_alignLeft="@+id/monday"
+            android:layout_alignStart="@+id/monday"
             android:textSize="17sp" />
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Thursday"
-            android:id="@+id/checkBox4"
-            android:layout_alignTop="@+id/checkBox3"
-            android:layout_toRightOf="@+id/checkBox3"
-            android:layout_toEndOf="@+id/checkBox3"
+            android:clickable="true"
+            android:id="@+id/thursday"
+            android:layout_alignTop="@+id/wednesday"
+            android:layout_toRightOf="@+id/wednesday"
+            android:layout_toEndOf="@+id/wednesday"
             android:textSize="17sp" />
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Friday"
-            android:id="@+id/checkBox5"
-            android:layout_below="@+id/checkBox3"
-            android:layout_alignLeft="@+id/checkBox3"
-            android:layout_alignStart="@+id/checkBox3"
+            android:clickable="true"
+            android:id="@+id/friday"
+            android:layout_below="@+id/wednesday"
+            android:layout_alignLeft="@+id/wednesday"
+            android:layout_alignStart="@+id/wednesday"
             android:textSize="17sp" />
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Saturday"
-            android:id="@+id/checkBox6"
-            android:layout_alignTop="@+id/checkBox5"
-            android:layout_toRightOf="@+id/checkBox3"
-            android:layout_toEndOf="@+id/checkBox3"
+            android:clickable="true"
+            android:id="@+id/saturday"
+            android:layout_alignTop="@+id/friday"
+            android:layout_toRightOf="@+id/wednesday"
+            android:layout_toEndOf="@+id/wednesday"
             android:textSize="17sp" />
 
         <EditText
@@ -88,13 +96,12 @@
             android:ems="10"
             android:id="@+id/editText"
             android:hint="Enter Start Time"
-            android:layout_centerVertical="true"
-            android:layout_alignLeft="@+id/checkBox5"
-            android:layout_alignStart="@+id/checkBox5"
             android:background="@drawable/text_box"
             android:textColor="#000000"
             android:text="Enter Start Time"
-            android:gravity="center" />
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
 
         <EditText
             android:layout_width="wrap_content"
@@ -104,22 +111,34 @@
             android:id="@+id/editText2"
             android:hint="Enter End Time"
             android:background="@drawable/text_box"
-            android:layout_below="@+id/editText"
-            android:layout_alignRight="@+id/checkBox2"
-            android:layout_alignEnd="@+id/checkBox2"
-            android:layout_marginTop="42dp"
+            android:layout_marginTop="45dp"
             android:text="Enter End Time"
             android:textColor="#000000"
-            android:gravity="center" />
+            android:gravity="center"
+            android:layout_below="@+id/editText"
+            android:layout_alignLeft="@+id/editText"
+            android:layout_alignStart="@+id/editText" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Done"
             android:id="@+id/button2"
-            android:layout_marginTop="54dp"
-            android:layout_below="@+id/editText2"
-            android:layout_centerHorizontal="true"
-            android:background="#F47424" />
+            android:background="#F47424"
+            android:layout_marginBottom="49dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/editText2"
+            android:layout_alignEnd="@+id/editText2" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back"
+            android:id="@+id/button9"
+            android:onClick="backToCreate"
+            android:background="#F47F24"
+            android:layout_alignTop="@+id/button2"
+            android:layout_alignLeft="@+id/editText2"
+            android:layout_alignStart="@+id/editText2" />
     </RelativeLayout>
 </LinearLayout>

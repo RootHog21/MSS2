@@ -39,6 +39,14 @@
             android:name=".RegisterUserActivity"
             android:label="@string/title_activity_register_user" >
         </activity>
+        <activity
+            android:name=".AddBlockedTimeActivity"
+            android:label="@string/title_activity_add_blocked_time" >
+        </activity>
+        <activity
+            android:name=".AddClassActivity"
+            android:label="@string/title_activity_add_class" >
+        </activity>
     </application>
 
 </manifest>
