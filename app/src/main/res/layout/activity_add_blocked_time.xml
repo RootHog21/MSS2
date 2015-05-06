@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0066B0">
-
+    android:background="@drawable/Colors">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -28,9 +28,14 @@
             android:checked="false"
             android:textSize="17sp"
             android:clickable="true"
-            android:layout_above="@+id/thursday"
-            android:layout_alignRight="@+id/editText"
-            android:layout_alignEnd="@+id/editText" />
+            android:layout_alignTop="@+id/monday"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="22dp"
+            android:layout_marginEnd="22dp"
+            android:layout_alignBottom="@+id/monday"
+            android:layout_toRightOf="@+id/wednesday"
+            android:layout_toEndOf="@+id/wednesday" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -61,10 +66,15 @@
             android:text="Thursday"
             android:clickable="true"
             android:id="@+id/thursday"
+            android:textSize="17sp"
             android:layout_alignTop="@+id/wednesday"
-            android:layout_toRightOf="@+id/wednesday"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="19dp"
+            android:layout_marginEnd="19dp"
             android:layout_toEndOf="@+id/wednesday"
-            android:textSize="17sp" />
+            android:layout_above="@+id/saturday"
+            android:layout_toRightOf="@+id/wednesday" />
 
         <CheckBox
             android:layout_width="wrap_content"
@@ -84,9 +94,10 @@
             android:clickable="true"
             android:id="@+id/saturday"
             android:layout_alignTop="@+id/friday"
-            android:layout_toRightOf="@+id/wednesday"
             android:layout_toEndOf="@+id/wednesday"
-            android:textSize="17sp" />
+            android:textSize="17sp"
+            android:layout_alignBottom="@+id/friday"
+            android:layout_toRightOf="@+id/wednesday" />
 
         <EditText
             android:layout_width="wrap_content"
