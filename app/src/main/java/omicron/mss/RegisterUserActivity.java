@@ -6,14 +6,69 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.parse.SignUpCallback;
+import com.parse.ParseUser;
+import com.parse.ParseException;
+
 
 
 public class RegisterUserActivity extends ActionBarActivity {
+
+    protected EditText rUsername;
+    protected EditText rPassword;
+    protected EditText rConfirmPassword;
+    protected Button rRegisterButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_user);
+
+        //initializing user and pass
+        rUsername = (EditText) findViewById(R.id.usernameRegisterEditText);
+        rPassword = (EditText) findViewById(R.id.passwordRegisterEditText);
+        rConfirmPassword = (EditText) findViewById(R.id.confirmPasswordRegisterEditText);
+        rRegisterButton = (Button) findViewById(R.id.registerButton);
+
+        //Setting Button to listen to click
+        rRegisterButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String username = rUsername.getText().toString().trim();
+                String password = rPassword.getText().toString().trim();
+                String confirmPassword = rConfirmPassword.getText().toString().trim();
+
+                if(password.equals(confirmPassword)) {
+                    // Pulled This Parse code from Parse.com, then modified
+                    // https://www.parse.com/docs/android/guide#users-signing-up
+                    ////////////////////////////////////////////////////////////
+                    ParseUser user = new ParseUser();
+                    user.setUsername(username);
+                    user.setPassword(password);
+
+
+                    user.signUpInBackground(new SignUpCallback() {
+                        public void done(ParseException e) {
+                            if (e == null) {
+                                // User signed up Scuccessfully
+                                Toast.makeText(RegisterUserActivity.this, "Successfully Registered!", Toast.LENGTH_LONG).show();
+                            } else {
+                                // Sign up didn't succeed. Look at the ParseException
+                                Toast.makeText(RegisterUserActivity.this, "Registration Failed!", Toast.LENGTH_LONG).show();
+                                // to figure out what went wrong
+                            }
+                        }
+                    });
+                } else {
+                    Toast.makeText(RegisterUserActivity.this, "Password fields dont match..", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
 
 
