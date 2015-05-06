@@ -6,36 +6,36 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
 
 
-public class ForgotPasswordActivity extends ActionBarActivity {
+public class EditUserActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_forgot_password);
+        setContentView(R.layout.activity_edit_user);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_forgot_password, menu);
+        getMenuInflater().inflate(R.menu.menu_edit_user, menu);
         return true;
     }
 
-    //called when user clicks Get Password
-    public void getPassword(View view) {
-        EditText username = (EditText) findViewById(R.id.passwordRetrieval);
-        String name = username.getText().toString();
-        //pop up password somehow
+    //called when user clicks Back
+    public void gotoMain(View view) {
+        finish();
     }
 
-    //called when the user clicks Back
-    public void gotoLogin(View view) {
-        finish();
-         }
+    public void changePassword(View view) {
+        //add change password algorithm
+    }
+
+    public void deleteAccount(View view) {
+        //add delete account algorithm
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

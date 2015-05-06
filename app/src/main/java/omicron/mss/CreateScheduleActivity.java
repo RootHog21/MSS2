@@ -63,4 +63,8 @@ public class CreateScheduleActivity extends ActionBarActivity {
         //Intent blockIntent = new Intent(this, BlockTime.class);
         //somehow branch to block time
     }
+
+    public void gotoMain(View view) {
+        finish();
+    }
 }
