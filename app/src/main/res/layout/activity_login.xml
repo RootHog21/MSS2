@@ -101,4 +101,16 @@
         android:clickable="true"
         android:textColor="#FFFFFF" />
 
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Button"
+        android:id="@+id/button13"
+        android:layout_below="@+id/forgotPassView"
+        android:layout_alignLeft="@+id/forgotPassView"
+        android:layout_alignStart="@+id/forgotPassView"
+        android:onClick="testFunction"
+        android:layout_marginTop="37dp" />
+
 </RelativeLayout>
