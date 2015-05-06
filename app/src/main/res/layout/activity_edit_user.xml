@@ -8,29 +8,30 @@
         android:layout_height="wrap_content"
         android:text="Delete Account"
         android:id="@+id/button3"
+        android:onClick="deleteAccount"
         android:background="#F47F24"
-        android:layout_marginBottom="123dp"
+        android:layout_marginBottom="69dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Security Questions"
-        android:id="@+id/button4"
+        android:text="Change Password"
+        android:id="@+id/button5"
+        android:onClick="changePassword"
         android:background="#F47F24"
-        android:layout_above="@+id/button3"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="60dp" />
+        android:layout_marginTop="133dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Change Password"
-        android:id="@+id/button5"
+        android:text="Back"
+        android:id="@+id/button11"
+        android:onClick="gotoMain"
         android:background="#F47F24"
-        android:layout_above="@+id/button4"
-        android:layout_alignRight="@+id/button4"
-        android:layout_alignEnd="@+id/button4"
-        android:layout_marginBottom="63dp" />
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

@@ -10,4 +10,7 @@ public class ScheduleCreator {
     }
 
 
+    void compare(String time1, String time2){
+        
+    }
 }
