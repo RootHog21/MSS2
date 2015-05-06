@@ -33,10 +33,9 @@ public class ForgotPasswordActivity extends ActionBarActivity {
     }
 
     //called when the user clicks Back
-    public void gotoMain(View view) {
-        Intent mainIntent = new Intent(this, MainActivity.class);
-        startActivity(mainIntent);
-    }
+    public void gotoLogin(View view) {
+        finish();
+         }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

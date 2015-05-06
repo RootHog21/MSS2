@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.parse.LogInCallback;
 import com.parse.Parse;
@@ -17,11 +18,17 @@ import com.parse.ParseUser;
 
 public class LoginActivity extends ActionBarActivity {
     ParseObject parse;
+    //protected Button testButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         Parse.enableLocalDatastore(this);
+        /*testButton = (Button) findViewById(R.id.button13);
+        testButton.setOnClickListener(new View.OnClickListener(){
+
+
+        });*/
         Parse.initialize(this, "FHwTc8y140hzykJ9bRRf5rcQAx9fIWENsF5Og9Xh", "98T1AS8768nb2UAMiaaGL1SuecHaYooPZo4w8IH5");
         parse = new ParseObject("ParseObj");
     }
@@ -41,11 +48,12 @@ public class LoginActivity extends ActionBarActivity {
         String name = username.getText().toString();
         EditText password = (EditText) findViewById(R.id.passwordText);
         String pass = password.getText().toString();
-        ParseUser.logInInBackground(name, pass,new LogInCallback() {
+        ParseUser.logInInBackground(name, pass, new LogInCallback() {
             public void done(ParseUser user, ParseException e) {
                 if (user != null) {
                     startActivity(loginIntent);
                 } else {
+                    Toast.makeText(LoginActivity.this,"Login Failed", Toast.LENGTH_LONG).show();
                     System.out.println("LoginError");
                     // Signup failed. Look at the ParseException to see what happened.
                 }
@@ -66,5 +74,20 @@ public class LoginActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    //called when user clicks Need to register
+    public void gotoRegister(View view) {
+        Intent registerIntent = new Intent(this, RegisterUserActivity.class);
+        startActivity(registerIntent);
+    }
+    //called when user clicks Need to register
+    public void gotoForget(View view) {
+        Intent ForgetIntent = new Intent(this, ForgotPasswordActivity.class);
+        startActivity(ForgetIntent);
+    }
+
+    public void testFunction(View view) throws ParseException {
+        QueryExample test = new QueryExample();
+        test.findClass();
     }
 }
