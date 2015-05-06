@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.parse.LogInCallback;
 import com.parse.Parse;
@@ -46,6 +47,7 @@ public class LoginActivity extends ActionBarActivity {
                 if (user != null) {
                     startActivity(loginIntent);
                 } else {
+                    Toast.makeText(LoginActivity.this,"Login Failed", Toast.LENGTH_LONG).show();
                     System.out.println("LoginError");
                     // Signup failed. Look at the ParseException to see what happened.
                 }
