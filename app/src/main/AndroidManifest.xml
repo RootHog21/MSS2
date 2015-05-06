@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="omicron.mss" >
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -26,12 +28,32 @@
             android:label="@string/title_activity_create_schedule" >
         </activity>
         <activity
-            android:name=".SecurityActivity"
-            android:label="@string/title_activity_security" >
-        </activity>
-        <activity
             android:name=".ViewScheduleActivity"
             android:label="@string/title_activity_view_schedule" >
+        </activity>
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:label="@string/title_activity_forgot_password" >
+        </activity>
+        <activity
+            android:name=".RegisterUserActivity"
+            android:label="@string/title_activity_register_user" >
+        </activity>
+        <activity
+            android:name=".AddBlockedTimeActivity"
+            android:label="@string/title_activity_add_blocked_time" >
+        </activity>
+        <activity
+            android:name=".AddClassActivity"
+            android:label="@string/title_activity_add_class" >
+        </activity>
+        <activity
+            android:name=".EditUserActivity"
+            android:label="@string/title_activity_edit_user" >
+        </activity>
+        <activity
+            android:name=".StoreScheduleActivity"
+            android:label="@string/title_activity_store_schedule" >
         </activity>
     </application>
 

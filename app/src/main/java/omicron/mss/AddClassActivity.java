@@ -8,27 +8,31 @@ import android.view.MenuItem;
 import android.view.View;
 
 
-public class SecurityActivity extends ActionBarActivity {
+public class AddClassActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_security);
+        setContentView(R.layout.activity_add_class);
     }
 
+    //called when user clicks Back
+    public void backToCreate(View view) {
+        finish();
+    }
+
+    //called when user clicks Add Class
+    public void addClass(View view) {
+        //add add class algorithm
+        Intent createIntent = new Intent(this, CreateScheduleActivity.class);
+        startActivity(createIntent);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_security, menu);
+        getMenuInflater().inflate(R.menu.menu_add_class, menu);
         return true;
-    }
-
-    //called when user clicks Submit
-    public void submit(View view) {
-        //temporary link, fix later
-        Intent submitIntent = new Intent(this, MainActivity.class);
-        startActivity(submitIntent);
     }
 
     @Override
