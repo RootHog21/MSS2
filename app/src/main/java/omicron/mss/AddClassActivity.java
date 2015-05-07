@@ -6,14 +6,35 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
+
+import com.parse.Parse;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+
+import java.util.List;
 
 
 public class AddClassActivity extends ActionBarActivity {
 
+    ClassSelector classSelector;
+    List<ParseObject> listOfClasses;
+    Intent goToSelectClass;
+    Bundle forSelectClass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_class);
+        goToSelectClass = new Intent(this, SelectClassActivity.class);
+        forSelectClass = new Bundle();
+        //store that value into the object of ParseObjecct
+        //Put that object into the goToSelectClass bundle
+//        forSelectClass.putParcelable("listOfClasses", listOfClasses);//this should put our classList into the bundle to be passed to the other intent
+//        goToSelectClass.putExtras(forSelectClass);  //This tells this intent to store the bundle into it as an extra
+
+        //Start the activity for SelectClass whenever you're done gathering all the information
+
     }
 
     //called when user clicks Back
@@ -48,5 +69,12 @@ public class AddClassActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    public void searchForClass()throws ParseException{
+        String dept;
+        int classNum;
+        dept = ((EditText)findViewById(R.id.departmentEditText)).getText().toString();
+        classNum = Integer.parseInt(((EditText)findViewById(R.id.departmentEditText)).getText().toString());
+        List<ParseObject> listOfClasses=new ClassSelector(dept,classNum).get();
     }
 }

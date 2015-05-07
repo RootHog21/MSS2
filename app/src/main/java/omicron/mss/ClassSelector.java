@@ -11,22 +11,18 @@ public class ClassSelector {
 
     String dept;
     int classNum;
-    String sect;
 
-    public ClassSelector(String dept, int classNum, String sect){
+    public ClassSelector(String dept, int classNum){
         this.dept = dept;
         this.classNum = classNum;
-        this.sect = sect;
     }
-    public ClassSelector(String dept, String sect){
+    public ClassSelector(String dept){
         this.dept = dept;
         this.classNum = classNum;
-        this.sect = sect;
     }
-    public ClassSelector(int classNum, String sect){
+    public ClassSelector(int classNum){
         this.dept = dept;
         this.classNum = classNum;
-        this.sect = sect;
     }
 
     public List<ParseObject> get()throws ParseException{
