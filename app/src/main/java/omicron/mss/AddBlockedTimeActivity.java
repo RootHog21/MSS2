@@ -37,12 +37,12 @@ public class AddBlockedTimeActivity extends ActionBarActivity {
         String start = startTime.getText().toString();
         EditText endTime = (EditText) findViewById(R.id.usernameText);
         String end = endTime.getText().toString();
-        CheckBox monday = (CheckBox) findViewById(R.id.monday);
-        CheckBox tuesday = (CheckBox) findViewById(R.id.tuesday);
-        CheckBox wednesday = (CheckBox) findViewById(R.id.wednesday);
-        CheckBox thursday = (CheckBox) findViewById(R.id.thursday);
-        CheckBox friday = (CheckBox) findViewById(R.id.friday);
-        CheckBox saturday = (CheckBox) findViewById(R.id.saturday);
+        CheckBox monday = (CheckBox) findViewById(R.id.mondayCheckBox);
+        CheckBox tuesday = (CheckBox) findViewById(R.id.tuesdayCheckBox);
+        CheckBox wednesday = (CheckBox) findViewById(R.id.wednesdayCheckBox);
+        CheckBox thursday = (CheckBox) findViewById(R.id.thursdayCheckedBox);
+        CheckBox friday = (CheckBox) findViewById(R.id.fridayCheckBox);
+        CheckBox saturday = (CheckBox) findViewById(R.id.saturdayCheckBox);
         //add status checking
         //add adding time algorithm
         finish();
