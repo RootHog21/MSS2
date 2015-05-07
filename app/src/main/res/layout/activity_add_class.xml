@@ -1,142 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="#0066B0"
+    android:background="@drawable/colors"
     android:id="@+id/addClassScreen"
     android:clickable="false">
 
-    <Button
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Add Class"
-        android:id="@+id/button6"
-        android:background="#F47F24"
-        android:layout_marginBottom="43dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/editText2"
-        android:layout_alignStart="@+id/editText2" />
-
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Under Grad"
-        android:id="@+id/checkBox"
-        android:checked="false"
-        android:clickable="true"
-        android:layout_above="@+id/checkBox4"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Grad"
-        android:id="@+id/checkBox2"
-        android:checked="false"
-        android:clickable="true"
-        android:layout_below="@+id/checkBox"
-        android:layout_alignLeft="@+id/checkBox"
-        android:layout_alignStart="@+id/checkBox" />
-
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fall 2015"
-        android:id="@+id/checkBox3"
-        android:checked="false"
-        android:clickable="true"
-        android:layout_below="@+id/editText"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Spring 2015"
-        android:id="@+id/checkBox4"
-        android:checked="false"
-        android:clickable="true"
-        android:layout_below="@+id/checkBox3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Summer 2015"
-        android:id="@+id/checkBox5"
-        android:clickable="true"
-        android:layout_below="@+id/checkBox4"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:checked="false" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText"
         android:editable="false"
+        android:id="@+id/addClassTitle"
+        android:textSize="32sp"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:text="Term" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp" />
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText2"
-        android:editable="false"
-        android:text="Program Status"
-        android:layout_above="@+id/checkBox3"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Department"
+        android:id="@+id/departmentTitle"
+        android:layout_below="@+id/addClassTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="75dp" />
 
-    <CheckBox
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:id="@+id/departmentEditText"
+        android:layout_below="@+id/departmentTitle"
+        android:layout_centerHorizontal="true"
+        android:inputType="text"
+        android:layout_marginLeft="75dp"
+        android:layout_marginRight="75dp"
+        android:background="#aba3a3a3"
+        android:hint="ex: CSE"
+        android:capitalize="characters"
+        android:gravity="center_vertical|center_horizontal" />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Winter 2015"
-        android:clickable="true"
-        android:id="@+id/checkBox6"
-        android:layout_below="@+id/checkBox5"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:checked="false" />
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Class Number"
+        android:id="@+id/classNumberTitle"
+        android:layout_below="@+id/departmentEditText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp" />
 
     <EditText
-        android:layout_width="100dp"
-        android:layout_height="30dp"
-        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:inputType="number"
         android:ems="10"
-        android:id="@+id/editText5"
-        android:hint="Subject"
-        android:background="@drawable/text_box"
-        android:textColorHint="#F47F24"
-        android:layout_alignTop="@+id/editText8"
-        android:layout_alignRight="@+id/checkBox6"
-        android:layout_alignEnd="@+id/checkBox6" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/editText8"
-        android:background="@drawable/text_box"
-        android:textColorHint="#F27F24"
-        android:hint="Course"
-        android:layout_centerVertical="true"
-        android:layout_alignRight="@+id/checkBox"
-        android:layout_alignEnd="@+id/checkBox" />
+        android:id="@+id/classNumberEditText"
+        android:layout_below="@+id/classNumberTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="75dp"
+        android:layout_marginRight="75dp"
+        android:background="#aba3a3a3"
+        android:hint="ex: 3310"
+        android:gravity="center_vertical|center_horizontal" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Back"
-        android:onClick="backToCreate"
-        android:id="@+id/button10"
-        android:background="#F27F24"
-        android:layout_alignTop="@+id/button6"
-        android:layout_toRightOf="@+id/editText"
-        android:layout_toEndOf="@+id/editText" />
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Add Class"
+       android:id="@+id/addClassButton"
+       android:background="#F47F24"
+       android:layout_marginBottom="150dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/classNumberEditText"
+        android:layout_alignStart="@+id/classNumberEditText" />
+
+   <Button
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Back"
+       android:onClick="backToCreate"
+       android:id="@+id/addClassBackButton"
+       android:background="#F27F24"
+       android:layout_alignBaseline="@+id/addClassButton"
+       android:layout_alignBottom="@+id/addClassButton"
+       android:layout_alignRight="@+id/classNumberEditText"
+       android:layout_alignEnd="@+id/classNumberEditText" />
 
 </RelativeLayout>

@@ -1,155 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/colors"
     android:id="@+id/blockedTimeLinear">
-    <RelativeLayout
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Add Blocked Time"
+        android:editable="false"
+        android:id="@+id/addBlockedTitle"
+        android:textSize="32sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Monday"
+        android:id="@+id/mondayCheckBox"
+        android:layout_marginTop="50dp"
+        android:textSize="17sp"
+        android:clickable="true"
+        android:layout_below="@+id/addBlockedTitle"
+        android:layout_alignStart="@+id/StartTimeText"
+        android:textColor="#ffffff" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tuesday"
+        android:id="@+id/tuesdayCheckBox"
+        android:layout_marginTop="50dp"
+        android:textSize="17sp"
+        android:clickable="true"
+        android:layout_below="@+id/addBlockedTitle"
+        android:layout_alignStart="@id/thursdayCheckedBox"
+        android:textColor="#ffffff" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wednesday"
+        android:id="@+id/wednesdayCheckBox"
+        android:clickable="true"
+        android:layout_below="@+id/mondayCheckBox"
+        android:layout_alignStart="@+id/mondayCheckBox"
+        android:textSize="17sp"
+        android:layout_marginTop="10dp"
+        android:textColor="#ffffff" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thursday"
+        android:clickable="true"
+        android:id="@+id/thursdayCheckedBox"
+        android:textSize="17sp"
+        android:layout_alignEnd="@+id/StartTimeText"
+        android:layout_below="@+id/tuesdayCheckBox"
+        android:layout_marginTop="10dp"
+        android:textColor="#ffffff" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Friday"
+        android:clickable="true"
+        android:id="@+id/fridayCheckBox"
+        android:layout_below="@+id/wednesdayCheckBox"
+        android:layout_alignStart="@+id/wednesdayCheckBox"
+        android:textSize="17sp"
+        android:layout_marginTop="10dp"
+        android:textColor="#ffffff" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Saturday"
+        android:clickable="true"
+        android:id="@+id/saturdayCheckBox"
+        android:textSize="17sp"
+        android:layout_below="@+id/thursdayCheckedBox"
+        android:layout_alignStart="@+id/thursdayCheckedBox"
+        android:layout_marginTop="10dp"
+        android:textColor="#ffffff" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Done"
+        android:id="@+id/addBlockedDoneButton"
+        android:background="#F47424"
+        android:layout_below="@+id/endTimeText"
+        android:layout_alignEnd="@id/endTimeText"
+        android:layout_marginTop="50dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:id="@+id/addBlockedBackButton"
+        android:onClick="backToCreate"
+        android:layout_alignStart="@+id/endTimeText"
+        android:background="#F47F24"
+        android:layout_below="@+id/endTimeText"
+        android:layout_marginTop="50dp" />
+
+    <EditText
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="40dp"
+        android:inputType="time"
+        android:ems="10"
+        android:id="@+id/StartTimeText"
+        android:layout_below="@+id/fridayCheckBox"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="@string/start_time"
+        android:textColor="#ffffff"
+        android:gravity="center_vertical|center_horizontal"
+        android:background="#aba3a3a3"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp" />
 
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Monday"
-            android:id="@+id/monday"
-            android:layout_marginTop="47dp"
-            android:textSize="17sp"
-            android:clickable="true"
-            android:layout_below="@+id/textView3"
-            android:layout_alignLeft="@+id/editText"
-            android:layout_alignStart="@+id/editText" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:inputType="time"
+        android:ems="10"
+        android:id="@+id/endTimeText"
+        android:layout_below="@+id/StartTimeText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="@string/end_time"
+        android:textColor="#ffffff"
+        android:textAlignment="center"
+        android:gravity="center_vertical|center_horizontal"
+        android:background="#aba3a3a3"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp" />
 
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tuesday"
-            android:id="@+id/tuesday"
-            android:checked="false"
-            android:textSize="17sp"
-            android:clickable="true"
-            android:layout_alignTop="@+id/monday"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginRight="22dp"
-            android:layout_marginEnd="22dp"
-            android:layout_alignBottom="@+id/monday"
-            android:layout_toRightOf="@+id/wednesday"
-            android:layout_toEndOf="@+id/wednesday" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Add Blocked Time"
-            android:editable="false"
-            android:id="@+id/textView3"
-            android:textSize="32sp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
-
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Wednesday"
-            android:id="@+id/wednesday"
-            android:checked="false"
-            android:clickable="true"
-            android:layout_below="@+id/monday"
-            android:layout_alignLeft="@+id/monday"
-            android:layout_alignStart="@+id/monday"
-            android:textSize="17sp" />
-
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Thursday"
-            android:clickable="true"
-            android:id="@+id/thursday"
-            android:textSize="17sp"
-            android:layout_alignTop="@+id/wednesday"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginRight="19dp"
-            android:layout_marginEnd="19dp"
-            android:layout_toEndOf="@+id/wednesday"
-            android:layout_above="@+id/saturday"
-            android:layout_toRightOf="@+id/wednesday" />
-
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Friday"
-            android:clickable="true"
-            android:id="@+id/friday"
-            android:layout_below="@+id/wednesday"
-            android:layout_alignLeft="@+id/wednesday"
-            android:layout_alignStart="@+id/wednesday"
-            android:textSize="17sp" />
-
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Saturday"
-            android:clickable="true"
-            android:id="@+id/saturday"
-            android:layout_alignTop="@+id/friday"
-            android:layout_toEndOf="@+id/wednesday"
-            android:textSize="17sp"
-            android:layout_alignBottom="@+id/friday"
-            android:layout_toRightOf="@+id/wednesday" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="time"
-            android:ems="10"
-            android:id="@+id/editText"
-            android:hint="Enter Start Time"
-            android:background="@drawable/text_box"
-            android:textColor="#000000"
-            android:text="Enter Start Time"
-            android:gravity="center"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="time"
-            android:ems="10"
-            android:id="@+id/editText2"
-            android:hint="Enter End Time"
-            android:background="@drawable/text_box"
-            android:layout_marginTop="45dp"
-            android:text="Enter End Time"
-            android:textColor="#000000"
-            android:gravity="center"
-            android:layout_below="@+id/editText"
-            android:layout_alignLeft="@+id/editText"
-            android:layout_alignStart="@+id/editText" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Done"
-            android:id="@+id/button2"
-            android:background="#F47424"
-            android:layout_marginBottom="49dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignRight="@+id/editText2"
-            android:layout_alignEnd="@+id/editText2" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Back"
-            android:id="@+id/button9"
-            android:onClick="backToCreate"
-            android:background="#F47F24"
-            android:layout_alignTop="@+id/button2"
-            android:layout_alignLeft="@+id/editText2"
-            android:layout_alignStart="@+id/editText2" />
-    </RelativeLayout>
-</LinearLayout>
+</RelativeLayout>
