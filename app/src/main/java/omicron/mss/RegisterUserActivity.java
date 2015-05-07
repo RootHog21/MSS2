@@ -70,7 +70,7 @@ public class RegisterUserActivity extends ActionBarActivity {
                                 ParseObject tempSchedule = new ParseObject("TempSchedule");
                                 tempSchedule.put("UserID",""+username);
                                 for(int i = 1; i <= 10; i++){
-                                    tempSchedule.put("Class"+i,"Empty");
+                                    tempSchedule.put("Class"+Integer.toString(i),"Empty");
                                 }
                                 try {
                                     tempSchedule.save();
