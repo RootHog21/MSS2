@@ -41,7 +41,7 @@
         android:textSize="17sp"
         android:clickable="true"
         android:layout_below="@+id/addBlockedTitle"
-        android:layout_alignStart="@id/thursdayCheckedBox"
+        android:layout_alignStart="@+id/thursdayCheckedBox"
         android:textColor="#ffffff" />
 
     <CheckBox
