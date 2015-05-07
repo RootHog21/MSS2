@@ -10,10 +10,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.parse.Parse;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
 import com.parse.SignUpCallback;
 import com.parse.ParseUser;
 import com.parse.ParseException;
 
+import static java.lang.Object.*;
 
 
 public class RegisterUserActivity extends ActionBarActivity {
@@ -22,6 +26,7 @@ public class RegisterUserActivity extends ActionBarActivity {
     protected EditText rPassword;
     protected EditText rConfirmPassword;
     protected Button rRegisterButton;
+    protected EditText rEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +38,7 @@ public class RegisterUserActivity extends ActionBarActivity {
         rPassword = (EditText) findViewById(R.id.passwordRegisterEditText);
         rConfirmPassword = (EditText) findViewById(R.id.confirmPasswordRegisterEditText);
         rRegisterButton = (Button) findViewById(R.id.registerButton);
+        rEmail = (EditText) findViewById(R.id.emailRegisterEditText);
 
         //Setting Button to listen to click
         rRegisterButton.setOnClickListener(new View.OnClickListener() {
@@ -41,6 +47,7 @@ public class RegisterUserActivity extends ActionBarActivity {
 
                 String username = rUsername.getText().toString().trim();
                 String password = rPassword.getText().toString().trim();
+                String email = rEmail.getText().toString().trim();
                 String confirmPassword = rConfirmPassword.getText().toString().trim();
 
                 if(password.equals(confirmPassword)) {
@@ -50,13 +57,26 @@ public class RegisterUserActivity extends ActionBarActivity {
                     ParseUser user = new ParseUser();
                     user.setUsername(username);
                     user.setPassword(password);
+                    user.setEmail(email);
 
 
                     user.signUpInBackground(new SignUpCallback() {
                         public void done(ParseException e) {
                             if (e == null) {
+
                                 // User signed up Scuccessfully
                                 Toast.makeText(RegisterUserActivity.this, "Successfully Registered!", Toast.LENGTH_LONG).show();
+                                ParseObject schedule = new ParseObject("Schedule");
+                                for(int createClassListCounter = 0;createClassListCounter<5;createClassListCounter++){
+                                    schedule = new ParseObject("Schedule");
+                                    schedule.put("ScheduleUserNum",ParseUser.getCurrentUser().getUsername()+Integer.toString(createClassListCounter));
+                                    try {
+                                        schedule.save();
+                                    } catch (ParseException e1) {
+                                        e1.printStackTrace();
+                                    }
+                                    finish();
+                                }
                             } else {
                                 // Sign up didn't succeed. Look at the ParseException
                                 Toast.makeText(RegisterUserActivity.this, "Registration Failed!", Toast.LENGTH_LONG).show();
