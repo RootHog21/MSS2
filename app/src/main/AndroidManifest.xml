@@ -55,6 +55,14 @@
             android:name=".StoreScheduleActivity"
             android:label="@string/title_activity_store_schedule" >
         </activity>
+        <activity
+            android:name=".SelectClassActivity"
+            android:label="@string/title_activity_select_class" >
+        </activity>
+        <activity
+            android:name=".ScheduleScreenActivity"
+            android:label="@string/title_activity_schedule_screen" >
+        </activity>
     </application>
 
 </manifest>
