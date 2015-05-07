@@ -6,7 +6,7 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="omicron.mss.CreateScheduleActivity"
     android:id="@+id/relativeLayout"
-    android:background="#0066B0">
+    android:background="@drawable/colors">
 
     <Button
         android:layout_width="wrap_content"
@@ -15,7 +15,8 @@
         android:id="@+id/addClassButton"
         android:onClick="addClass"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="#aba3a3a3" />
 
     <Button
         android:layout_width="wrap_content"
@@ -25,7 +26,8 @@
         android:layout_marginTop="20dp"
         android:onClick="removeClass"
         android:layout_below="@+id/addClassButton"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="#aba3a3a3" />
 
     <Button
         android:layout_width="wrap_content"
@@ -35,7 +37,8 @@
         android:layout_marginTop="20dp"
         android:onClick="blockTime"
         android:layout_below="@+id/removeClassButton"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="#aba3a3a3" />
 
     <ListView
         android:layout_width="wrap_content"
@@ -46,7 +49,7 @@
         android:layout_marginBottom="50dp"
         android:layout_below="@+id/addBlockTimeButton"
         android:choiceMode="singleChoice"
-        android:background="#F47F24"
+        android:background="#0066b0"
         android:layout_alignParentEnd="true" />
 
     <Button
@@ -57,7 +60,8 @@
         android:onClick="create"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/addClassButton"
-        android:layout_toEndOf="@+id/addClassButton" />
+        android:layout_toEndOf="@+id/addClassButton"
+        android:background="#aba3a3a3" />
 
     <Button
         android:layout_width="wrap_content"
@@ -67,6 +71,7 @@
         android:onClick="gotoMain"
         android:layout_alignTop="@+id/createButton"
         android:layout_toLeftOf="@+id/addClassButton"
-        android:layout_toStartOf="@+id/addClassButton" />
+        android:layout_toStartOf="@+id/addClassButton"
+        android:background="#aba3a3a3" />
 
 </RelativeLayout>
