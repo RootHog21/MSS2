@@ -75,7 +75,6 @@
         android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/classNumberEditText"
         android:layout_alignStart="@+id/classNumberEditText"
-        android:clickable="false"
         android:onClick="searchForClass" />
 
    <Button

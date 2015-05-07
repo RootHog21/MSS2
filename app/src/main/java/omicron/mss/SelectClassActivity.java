@@ -26,7 +26,7 @@ public class SelectClassActivity extends ActionBarActivity implements AdapterVie
     ArrayList<String> arrayList;
     String str;
     Bundle receiveFromAddClass;
-    List<ParseObject> listOfClasses;
+    ArrayList<String> listOfClasses;
     DisplayAdapter displayAdapter;
     TextView testText;
 
@@ -39,13 +39,13 @@ public class SelectClassActivity extends ActionBarActivity implements AdapterVie
 
 
         receiveFromAddClass = getIntent().getExtras(); //Gets the bundle from the other class and stores it in here
-        listOfClasses = (List<ParseObject>) receiveFromAddClass.getParcelable("listOfClasses"); //and store it into the list of classes thingy
+        listOfClasses = (ArrayList<String>) receiveFromAddClass.getStringArrayList("ListofClasses"); //and store it into the list of classes thingy
         listView = (ListView) findViewById(R.id.classListView);
         listView.setOnItemClickListener(this);
         arrayList = new ArrayList<>();
 
         for(int i = 0; i < listOfClasses.size(); i++){  //Gets the information from the ParseObject and store it into the string that gets stored into the arraylist
-            str = listOfClasses.get(i).getString("className")+" "+listOfClasses.get(i).getString("classTime");//this needs to be updated to show all information
+            str = listOfClasses.get(i)+" "+listOfClasses.get(i);//this needs to be updated to show all information
             arrayList.add(str);
         }
 
