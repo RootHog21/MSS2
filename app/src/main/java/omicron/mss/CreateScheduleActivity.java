@@ -8,17 +8,49 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
 
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseUser;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 
 public class CreateScheduleActivity extends ActionBarActivity {
+    TextView testText;
+    String str;
+    ArrayList<String> arrayList;
+    DisplayAdapter displayAdapter;
+    ListView listView;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_schedule);
+    protected void onCreate(Bundle savedInstanceState){
+        try {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_create_schedule);
+            testText = (TextView) findViewById(R.id.test);
+            ParseObject tempSchedule =new ParseScheduleControler().retrieveTempSchedule();
+            arrayList = new ArrayList<>();
+
+            for(int i = 1; i <=10; i++){  //Gets the information from the ParseObject and store it into the string that gets stored into the arraylist
+                str = (String)((ParseObject)tempSchedule.get("Class"+i)).get("name");//this needs to be updated to show all information
+                arrayList.add(str);
+            }
+
+
+            displayAdapter = new DisplayAdapter(CreateScheduleActivity.this, android.R.layout.simple_list_item_activated_1, arrayList);
+            listView.setAdapter(displayAdapter);
+
+
+
+
+        }catch(ParseException e){
+            e.printStackTrace();
+        }
     }
 
 
@@ -70,4 +102,3 @@ public class CreateScheduleActivity extends ActionBarActivity {
         finish();
     }
 }
-
